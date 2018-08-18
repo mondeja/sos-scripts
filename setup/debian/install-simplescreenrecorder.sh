@@ -14,11 +14,10 @@
 
 program_name="SimpleScreenRecorder"
 binary_filename="simplescreenrecorder"
-binary_filepath="/usr/bin/$binary_filename"
+binary_filepath="$BINARIES_FOLDER/$binary_filename"
 desktop_filepath="$DESKTOP_FOLDER/$binary_filename.desktop"
 
-
-logo_filename="simplescreenrecorder.jpg"
+logo_filename="$binary_filename.jpg"
 logo_url="https://gutl.jovenclub.cu/wp-content/uploads/2014/10/$logo_filename"
 
 echo "Descargando logo..."

@@ -21,31 +21,32 @@ else
 fi
 
 deb_filename=$(printf "virtualbox-5.2_5.2.18-124319~Debian~%s_%s.deb" "$debian_version_string" "$ARCH")
-download_url="https://download.virtualbox.org/virtualbox/5.2.18/$deb_filename"
+url_download="https://download.virtualbox.org/virtualbox/5.2.18/$deb_filename"
 desktop_filename="$DESKTOP_FOLDER/virtualbox.desktop"
 program_name="VirtualBox"
-logo_filename="Virtualbox_logo.png"
-logo_url="https://upload.wikimedia.org/wikipedia/commons/d/d5/$logo_filename"
+logo_filename_origin="Virtualbox_logo.png"
+logo_filename_target="virtualbox.png"
+logo_url="https://upload.wikimedia.org/wikipedia/commons/d/d5/$logo_filename_origin"
 
 echo "Instalando dependencias..."
-sudo apt-get install libcurl3
+sudo apt-get install libcurl3 -y
 
 echo "Descargando $deb_filename ..."
-#wget $download_url
+wget $url_download
 
 echo "Descargando logo..."
 wget $logo_url
-sudo mv $logo_filename $PROGRAMS_FOLDER/virtualbox/$logo_filename
+sudo mv $logo_filename_origin $PROGRAMS_FOLDER/virtualbox/$logo_filename_target
 
 echo "Instalando VirtualBox ..."
-#sudo dpkg -i $deb_filename
-#rm $deb_filename
+sudo dpkg -i $deb_filename
+rm $deb_filename
 
 cat > $desktop_filename <<- EOM
 [Desktop Entry]
 Type=Application
 Exec=$BINARIES_FOLDER/virtualbox
-Icon=$PROGRAMS_FOLDER/virtualbox/$logo_filename
+Icon=$PROGRAMS_FOLDER/virtualbox/$logo_filename_target
 Name=$program_name
 GenericName=$program_name
 Categories=VirtualMachines;

@@ -14,12 +14,13 @@
 
 program_name="Pycharm Community"
 program_folder="pycharm-community-2018.2.1"
+binary_filename="pycharm"
 tar_filename="$program_folder.tar.gz"
-download_url="https://download-cf.jetbrains.com/python/$tar_filename"
-desktop_filepath="$DESKTOP_FOLDER/pycharm.desktop"
+url_download="https://download-cf.jetbrains.com/python/$tar_filename"
+desktop_filepath="$DESKTOP_FOLDER/$binary_filename.desktop"
 
 echo "Descargando $program_name ..."
-wget $download_url
+wget $url_download
 
 echo "Extrayendo $tar_filename ..."
 tar -xf $tar_filename
@@ -30,13 +31,13 @@ sudo mv $program_folder $PROGRAMS_FOLDER/$program_folder
 
 # Creamos el enlace simbólico al binario `pycharm.sh`
 #   para ejecutarlo como `pycharm` desde consola
-sudo ln -s $PROGRAMS_FOLDER/$program_folder/bin/pycharm.sh /usr/bin/pycharm
+sudo ln -s $PROGRAMS_FOLDER/$program_folder/bin/$binary_filename.sh /usr/bin/$binary_filename
 
 cat > $desktop_filepath <<- EOM
 [Desktop Entry]
 Type=Application
-Exec=$BINARIES_FOLDER/pycharm
-Icon=$PROGRAMS_FOLDER/$program_folder/bin/pycharm.png
+Exec=$BINARIES_FOLDER/$binary_filename
+Icon=$PROGRAMS_FOLDER/$program_folder/bin/$binary_filename.png
 Name=$program_name
 GenericName=$program_name
 Categories=Programming;
