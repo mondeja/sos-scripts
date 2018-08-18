@@ -16,9 +16,8 @@ binary_filename="ksnapshot"
 desktop_filepath="$DESKTOP_FOLDER/$binary_filename.desktop"
 binary_filepath="/usr/bin/$binary_filename"
 
-logo_filename_origin="ksnapshot_48.png"
-logo_filename_target="$binary_filename.png"
-logo_url_download="https://www.kde.org/images/icons/$logo_filename_origin"
+logo_filename="$binary_filename.png"
+logo_url_download="$ASSETS_REMOTE_URL/$logo_filename"
 
 echo "Descargando logo..."
 wget $logo_url_download
@@ -28,7 +27,7 @@ wget $logo_url_download
 if [ ! -d "$ICONS_FOLDER/$binary_filename" ]; then
   sudo mkdir "$ICONS_FOLDER/$binary_filename"
 fi
-sudo mv $logo_filename_origin "$ICONS_FOLDER/$binary_filename/$logo_filename_target"
+sudo mv $logo_filename "$ICONS_FOLDER/$binary_filename/$logo_filename"
 
 
 if [ ! -f  $$binary_filepath ]; then
@@ -42,7 +41,7 @@ cat > $desktop_filepath <<- EOM
 [Desktop Entry]
 Type=Application
 Exec=$binary_filepath
-Icon=$ICONS_FOLDER/$binary_filename/$logo_filename_target
+Icon=$ICONS_FOLDER/$binary_filename/$logo_filename
 Name=$program_name
 GenericName=$program_name
 Categories=Screenshot;

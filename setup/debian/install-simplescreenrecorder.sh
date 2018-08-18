@@ -18,7 +18,7 @@ binary_filepath="$BINARIES_FOLDER/$binary_filename"
 desktop_filepath="$DESKTOP_FOLDER/$binary_filename.desktop"
 
 logo_filename="$binary_filename.jpg"
-logo_url="https://gutl.jovenclub.cu/wp-content/uploads/2014/10/$logo_filename"
+logo_url="$ASSETS_REMOTE_URL/$logo_filename"
 
 echo "Descargando logo..."
 wget $logo_url

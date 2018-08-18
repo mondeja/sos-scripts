@@ -22,10 +22,10 @@
       https://askubuntu.com/questions/194124/how-to-get-language-variables-desktop-folder-name-document-folder-name-etc 
 '
 
+# Configuración de directorios
 PROGRAMS_FOLDER="/usr/share"
 BINARIES_FOLDER="/usr/bin"
 ICONS_FOLDER="$PROGRAMS_FOLDER/icons"
-
 if [ -d "$HOME/Escritorio" ]; then
   DESKTOP_FOLDER="$HOME/Escritorio"
 elif [ -d "$HOME/Desktop" ]; then
@@ -34,6 +34,10 @@ else
   echo "No has configurado el directorio del Escritorio en conf.sh" 
 fi
 
+# Configuración de archivos remotos
+ASSETS_REMOTE_URL="https://raw.githubusercontent.com/mondeja/sos-scripts/master/assets/"
+
+# Variables del sistema operativo
 DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version)
 DEBIAN_VERSION_NUMBER_MAYOR=$(echo $DEBIAN_VERSION_NUMBER | cut -d "." -f1)
 ARCH=$(dpkg --print-architecture)
