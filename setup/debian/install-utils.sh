@@ -7,8 +7,6 @@
       - wget
 '
 
-sudo apt-get update && sudo apt-get upgrade
-
 if [ ! -f "$BINARIES_FOLDER/wget" ]; then
   sudo apt-get install wget -y
 fi
@@ -16,6 +14,4 @@ fi
 if [ ! -f "$BINARIES_FOLDER/git" ]; then
   sudo apt-get install git -y
 fi
-
-
 

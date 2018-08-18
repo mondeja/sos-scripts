@@ -1,23 +1,25 @@
 #!/usr/bin/env bash
 
 : '
-    Instalación de Ksnapshot
+    Instalación de SimpleScreenRecorder
 
-    Por defecto instala la versión 16.08.3.
+    Por defecto instala la versión 16.08.3-2 en Debian 9 y
+      y la 4.12.2-2 en Debian 8.
 
     Soporte:
-      - Distribuciones basadas en Debian.
+      - Debian 9.
 '
 
 . conf.sh
 
-program_name="Ksnapshot"
-binary_filename="ksnapshot"
-desktop_filepath="$DESKTOP_FOLDER/$binary_filename.desktop"
+program_name="SimpleScreenRecorder"
+binary_filename="simplescreenrecorder"
 binary_filepath="/usr/bin/$binary_filename"
+desktop_filepath="$DESKTOP_FOLDER/$binary_filename.desktop"
 
-logo_filename="ksnapshot_48.png"
-logo_url="https://www.kde.org/images/icons/$logo_filename"
+
+logo_filename="simplescreenrecorder.jpg"
+logo_url="https://gutl.jovenclub.cu/wp-content/uploads/2014/10/$logo_filename"
 
 echo "Descargando logo..."
 wget $logo_url
