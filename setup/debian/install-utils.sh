@@ -15,3 +15,6 @@ if [ ! -f "$BINARIES_FOLDER/git" ]; then
   sudo apt-get install git -y
 fi
 
+if [ ! -f "$BINARIES_FOLDER/pip" ]; then
+  sudo apt-get install python-pip -y
+fi
