@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-. developer-sh
+. developer.sh
 . misc.sh
