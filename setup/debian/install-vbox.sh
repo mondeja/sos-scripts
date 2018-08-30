@@ -28,7 +28,7 @@ logo_filename="virtualbox.png"
 logo_url="$ASSETS_REMOTE_URL/$logo_filename_origin"
 
 echo "Instalando dependencias..."
-sudo apt-get install libcurl3 -y
+sudo apt-get install libcurl3 libqt5opengl5 -y
 
 echo "Descargando $deb_filename ..."
 wget $url_download
