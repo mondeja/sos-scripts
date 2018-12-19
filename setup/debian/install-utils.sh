@@ -18,3 +18,7 @@ fi
 if [ ! -f "$BINARIES_FOLDER/pip" ]; then
   sudo apt-get install python-pip -y
 fi
+
+if [ ! -f "$BINARIES_FOLDER/pip3" ]; then
+  sudo apt-get install python3-pip -y
+fi
