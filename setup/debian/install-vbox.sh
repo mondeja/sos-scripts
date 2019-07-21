@@ -20,8 +20,8 @@ else
   exit 1
 fi
 
-deb_filename=$(printf "virtualbox-5.2_5.2.18-124319~Debian~%s_%s.deb" "$debian_version_string" "$ARCH")
-url_download="https://download.virtualbox.org/virtualbox/5.2.18/$deb_filename"
+deb_filename=$(printf "virtualbox-6.0_6.0.10-132072~Debian~%s_%s.deb" "$debian_version_string" "$ARCH")
+url_download="https://download.virtualbox.org/virtualbox/6.0.10/$deb_filename"
 desktop_filename="$DESKTOP_FOLDER/virtualbox.desktop"
 program_name="VirtualBox"
 logo_filename="virtualbox.png"
@@ -39,7 +39,7 @@ sudo mv $logo_filename $PROGRAMS_FOLDER/virtualbox/$logo_filename
 
 echo "Instalando VirtualBox ..."
 sudo dpkg -i $deb_filename
-rm $deb_filename
+rm -f $deb_filename
 
 cat > $desktop_filename <<- EOM
 [Desktop Entry]

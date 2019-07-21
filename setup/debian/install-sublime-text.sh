@@ -18,8 +18,8 @@ program_folder="sublime_text_3"
 binary_filename="sublime_text"
 desktop_filename="sublime-text.desktop"
 desktop_filepath="$DESKTOP_FOLDER/$desktop_filename"
-bz2_filename="sublime_text_3_build_3176_x64.tar.bz2"
-url_download="https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2"
+bz2_filename="sublime_text_3_build_3207_x64.tar.bz2"
+url_download="https://download.sublimetext.com/$bz2_filename"
 
 echo "Descargando $program_name ..."
 wget $url_download
@@ -29,6 +29,7 @@ tar xvf $bz2_filename
 rm $bz2_filename
 
 echo "Moviendo $program_folder a $PROGRAMS_FOLDER/$program_folder ..."
+sudo rm -rf $PROGRAMS_FOLDER/$program_folder
 sudo mv $program_folder $PROGRAMS_FOLDER/$program_folder
 
 # Creamos enlaces simbólicos al binario `sublime_text`
